@@ -33,7 +33,7 @@ export const LineGraph = (props: any) => {
           return {
             label,
             font: {
-              size: 20,
+              size: 24,
               weight: "bold",
             },
           };
@@ -89,7 +89,8 @@ export const LineGraph = (props: any) => {
         ml: 53,
         backgroundColor: "white",
         mt: "35px",
-        width: "2000px",
+        width: "1500px",
+        borderRadius: "0.75rem",
       }}
     >
       {chartData.length === 0 ? null : (

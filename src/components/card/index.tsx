@@ -3,7 +3,8 @@ import * as Strings from "../../constants/index";
 
 export const PortfolioCard = (props: any) => {
   const { masterData } = props;
-  const { portfolio, currencyCode, marketValue } = masterData;
+  const { portfolio, currencyCode, marketValue, securityValuations } =
+    masterData;
   const { investor } = portfolio || "";
 
   const profileDetails = [
@@ -28,12 +29,34 @@ export const PortfolioCard = (props: any) => {
   const renderDetails = () =>
     profileDetails.map((item: any) => (
       <Container sx={{ display: "flex", mb: 2 }} key={item.key}>
-        <Typography variant="h5" sx={{ mt: 1, fontWeight: "700", mr: 2 }}>
+        <Typography
+          variant="h5"
+          sx={{ mt: 1, fontWeight: "700", mr: 2, color: "#282c34" }}
+        >
           {item.key}
         </Typography>
-        <Typography variant="h5" sx={{ mt: 1, fontWeight: "500" }}>
+        <Typography
+          variant="h5"
+          sx={{ mt: 1, fontWeight: "500", color: "#2B547E" }}
+        >
           {item.value}
         </Typography>
+      </Container>
+    ));
+
+  const renderStockDetails = () =>
+    securityValuations?.map((item: any) => (
+      <Container sx={{ display: "flex", mb: 2 }} key={item.key}>
+        <Typography variant="h5" sx={{ mt: 1, mr: 2 }}>
+          {item.security.name}
+        </Typography>
+
+        <img
+          src={item.security.logoUrl}
+          alt={item.security.name}
+          width={50}
+          height={50}
+        />
       </Container>
     ));
 
@@ -48,17 +71,41 @@ export const PortfolioCard = (props: any) => {
         borderRadius: "0.75rem",
         backgroundColor: "#EBF4FA",
         mb: 20,
+        width: "1500px",
       }}
     >
       <Container
         sx={{ display: "flex", ml: 2, flexDirection: "column", mb: 5 }}
       >
-        <Typography variant="h4" sx={{ mt: 1, fontWeight: "700" }}>
+        <Typography
+          variant="h4"
+          sx={{ mt: 1, fontWeight: "700", color: "#2B547E" }}
+        >
           {Strings.PORTFOLIO_VALUE}
         </Typography>
-        <Card sx={{ minWidth: 275, mt: 5, p: 5, borderRadius: 5 }}>
-          {renderDetails()}
-        </Card>
+        <Container sx={{ display: "flex", ml: 2, flexDirection: "row", mb: 5 }}>
+          <Card
+            sx={{
+              width: 500,
+              mt: 5,
+              p: 5,
+              borderRadius: 5,
+              mr: 10,
+              boxShadow: 3,
+            }}
+          >
+            {renderDetails()}
+          </Card>
+          <Card sx={{ width: 500, mt: 5, p: 5, borderRadius: 5, boxShadow: 3 }}>
+            <Typography
+              variant="h5"
+              sx={{ mb: 4, fontWeight: "700", color: "#2B547E" }}
+            >
+              {Strings.CURRENT_STOCKS}
+            </Typography>
+            {renderStockDetails()}
+          </Card>
+        </Container>
       </Container>
     </Box>
   );

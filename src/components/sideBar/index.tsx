@@ -42,7 +42,7 @@ export const SideBar = (props: any) => {
       >
         <Box sx={{ display: "flex", padding: "45px 50px 8px" }}>
           <Toolbar />
-          <Typography variant="h5" sx={{ mt: 1, fontWeight: "700" }}>
+          <Typography variant="h5" sx={{ mt: 1, fontWeight: "700", color: '#2B547E' }}>
             {Strings.ACCESS_WEALTH}
           </Typography>
           <Toolbar />
@@ -62,14 +62,14 @@ export const SideBar = (props: any) => {
               },
             },
             "&& .Mui-selected:hover": {
-              bgcolor: "#282c34",
+              bgcolor: "#87AFC7",
               borderRadius: "10px",
             },
             "& .MuiListItemButton-root:hover": {
-              bgcolor: "#282c34",
+              bgcolor: "#87AFC7",
               borderRadius: "10px",
               "&, & .MuiListItemIcon-root": {
-                color: "#EBF4FA",
+                color: "#2B547E",
               },
             },
           }}

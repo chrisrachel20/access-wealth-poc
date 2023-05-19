@@ -39,7 +39,7 @@ const PieCharts = (props: any) => {
     title.map((value) => (
       <Grid sx={gridStyle} key={value.text}>
         <Container sx={{ textAlign: "center", p: 3, mb: -20 }}>
-          <Typography variant="h5" sx={{ fontWeight: "700", color: "#001E3C" }}>
+          <Typography variant="h5" sx={{ fontWeight: "700", color: "#2B547E" }}>
             {value.text}
           </Typography>
         </Container>

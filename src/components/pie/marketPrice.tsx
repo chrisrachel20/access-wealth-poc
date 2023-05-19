@@ -28,7 +28,6 @@ export const PieMarketPrice = (props: any) => {
   return (
     <Box sx={{ display: "flex", ml: 2}}>
          {unitsData && <Pie data={unitsData} options={options} />}
-    
     </Box>
   );
 };

@@ -19,3 +19,4 @@ export const SIDEBAR = [
 ];
 export const PIE_COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 export const LINE_COLORS = ["#0d6efd", "#6f42c1", "#20c997", "#0dcaf0", "#198754"];
+export const CURRENT_STOCKS = "Available Stocks";

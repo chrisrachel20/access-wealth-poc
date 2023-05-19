@@ -66,6 +66,7 @@ const Transactions = () => {
         disableDensitySelector
         columns={columns}
         slots={{ toolbar: GridToolbar }}
+        rowHeight={70}
         slotProps={{
           toolbar: {
             showQuickFilter: true,
@@ -79,10 +80,9 @@ const Transactions = () => {
         sx={{
           m: 2,
           p: 2,
-          "&, & .MuiDataGrid-root": {
-            borderColor: "#282c34",
-            borderWidth: 2,
-          },
+          boxShadow: 3,
+          border: 2,
+          borderColor: "#282c34",
           "& .MuiDataGrid-columnHeader": {
             fontSize: 22,
           },
