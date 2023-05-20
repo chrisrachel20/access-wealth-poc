@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PortfolioCard Should render component properly 1`] = `
+<div>
+  <div
+    class="MuiBox-root css-ppgd76"
+  >
+    <div
+      class="MuiContainer-root MuiContainer-maxWidthLg css-wymnel-MuiContainer-root"
+    >
+      <h4
+        class="MuiTypography-root MuiTypography-h4 css-1kt1ewx-MuiTypography-root"
+      >
+        Portfolio Valuation
+      </h4>
+      <div
+        class="MuiContainer-root MuiContainer-maxWidthLg css-14486nb-MuiContainer-root"
+      >
+        <div
+          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-vmcu6f-MuiPaper-root-MuiCard-root"
+        >
+          <div
+            class="MuiContainer-root MuiContainer-maxWidthLg css-fc1rjq-MuiContainer-root"
+          >
+            <h5
+              class="MuiTypography-root MuiTypography-h5 css-12l6q2q-MuiTypography-root"
+            >
+              Investor Name:
+            </h5>
+            <h5
+              class="MuiTypography-root MuiTypography-h5 css-1vbq3ux-MuiTypography-root"
+            >
+              Test Investor
+            </h5>
+          </div>
+          <div
+            class="MuiContainer-root MuiContainer-maxWidthLg css-fc1rjq-MuiContainer-root"
+          >
+            <h5
+              class="MuiTypography-root MuiTypography-h5 css-12l6q2q-MuiTypography-root"
+            >
+              Investor Account Currency:
+            </h5>
+            <h5
+              class="MuiTypography-root MuiTypography-h5 css-1vbq3ux-MuiTypography-root"
+            >
+              USD
+            </h5>
+          </div>
+          <div
+            class="MuiContainer-root MuiContainer-maxWidthLg css-fc1rjq-MuiContainer-root"
+          >
+            <h5
+              class="MuiTypography-root MuiTypography-h5 css-12l6q2q-MuiTypography-root"
+            >
+              Valuation Currency:
+            </h5>
+            <h5
+              class="MuiTypography-root MuiTypography-h5 css-1vbq3ux-MuiTypography-root"
+            >
+              USD
+            </h5>
+          </div>
+          <div
+            class="MuiContainer-root MuiContainer-maxWidthLg css-fc1rjq-MuiContainer-root"
+          >
+            <h5
+              class="MuiTypography-root MuiTypography-h5 css-12l6q2q-MuiTypography-root"
+            >
+              Portfolio Value:
+            </h5>
+            <h5
+              class="MuiTypography-root MuiTypography-h5 css-1vbq3ux-MuiTypography-root"
+            >
+              10000.00
+            </h5>
+          </div>
+        </div>
+        <div
+          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-6rhd0e-MuiPaper-root-MuiCard-root"
+        >
+          <h5
+            class="MuiTypography-root MuiTypography-h5 css-ovcsdv-MuiTypography-root"
+          >
+            Available Stocks
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

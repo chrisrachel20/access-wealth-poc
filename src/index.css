@@ -13,7 +13,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #001E3C;
-  /* background: linear-gradient(to right, #001E3C, #2B547E ); */
   background-repeat: no-repeat;
   display: flex;
 }

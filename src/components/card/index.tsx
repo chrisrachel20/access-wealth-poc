@@ -1,5 +1,6 @@
 import { Box, Typography, Container, Card } from "@mui/material";
 import * as Strings from "../../constants/index";
+import * as styles from "./styles";
 
 export const PortfolioCard = (props: any) => {
   const { masterData } = props;
@@ -29,17 +30,11 @@ export const PortfolioCard = (props: any) => {
 
   const renderDetails = () =>
     profileDetails.map((item: any) => (
-      <Container sx={{ display: "flex", mb: 2 }} key={item.key}>
-        <Typography
-          variant="h5"
-          sx={{ mt: 1, fontWeight: "700", mr: 2, color: "#282c34" }}
-        >
+      <Container sx={styles.profileWrapper} key={item.key}>
+        <Typography variant="h5" sx={styles.profileKey}>
           {item.key}
         </Typography>
-        <Typography
-          variant="h5"
-          sx={{ mt: 1, fontWeight: "500", color: "#2B547E" }}
-        >
+        <Typography variant="h5" sx={styles.profileValue}>
           {item.value}
         </Typography>
       </Container>
@@ -61,44 +56,15 @@ export const PortfolioCard = (props: any) => {
     ));
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        padding: "24px",
-        borderRadius: "0.75rem",
-        // backgroundColor: "#EBF4FA",
-        background: "linear-gradient(to bottom, #EBF4FA , #B0CFDE)",
-        mb: 20,
-        width: "auto",
-      }}
-    >
-      <Container
-        sx={{ display: "flex", flexDirection: "column", mb: 5 }}
-      >
-        <Typography
-          variant="h4"
-          sx={{ mt: 1, fontWeight: "700", color: "#2B547E" }}
-        >
+    <Box sx={styles.cardBox}>
+      <Container sx={styles.containerWrapper}>
+        <Typography variant="h4" sx={styles.title}>
           {Strings.PORTFOLIO_VALUE}
         </Typography>
-        <Container sx={{ display: "flex", flexDirection: "row" }}>
-          <Card
-            sx={{
-              width: 500,
-              mt: 5,
-              p: 5,
-              borderRadius: 5,
-              mr: 10,
-              boxShadow: 3,
-            }}
-          >
-            {renderDetails()}
-          </Card>
-          <Card sx={{ width: 500, mt: 5, p: 5, borderRadius: 5, boxShadow: 3 }}>
-            <Typography
-              variant="h5"
-              sx={{ mb: 4, fontWeight: "700", color: "#2B547E" }}
-            >
+        <Container sx={styles.detailsContainer}>
+          <Card sx={{...styles.card, mr: 10}}>{renderDetails()}</Card>
+          <Card sx={styles.card}>
+            <Typography variant="h5" sx={styles.stocksTitle}>
               {Strings.CURRENT_STOCKS}
             </Typography>
             {renderStockDetails()}

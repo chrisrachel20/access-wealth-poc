@@ -5,22 +5,10 @@ import {
 } from "../../components/pie/index";
 import { Box, Grid, Typography, Container } from "@mui/material";
 import * as Strings from "../../constants/index";
+import * as styles from "./styles";
 
 const PieCharts = (props: any) => {
   const { securityValuations } = props;
-
-  const gridStyle = {
-    // backgroundColor: "#EBF4FA",
-    background: "linear-gradient(to bottom, #EBF4FA , #B0CFDE)",
-    height: "700px",
-    width: "600px",
-    mr: 5,
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-evenly",
-    borderRadius: "30px",
-    mb: 10,
-  };
 
   const title = [
     {
@@ -39,9 +27,9 @@ const PieCharts = (props: any) => {
 
   const renderPie = () =>
     title.map((value) => (
-      <Grid sx={gridStyle} key={value.text}>
-        <Container sx={{ textAlign: "center", p: 3 }}>
-          <Typography variant="h4" sx={{ fontWeight: "700", color: "#2B547E" }}>
+      <Grid sx={styles.gridStyle} key={value.text}>
+        <Container sx={styles.container}>
+          <Typography variant="h4" sx={styles.text}>
             {value.text}
           </Typography>
         </Container>
@@ -51,7 +39,7 @@ const PieCharts = (props: any) => {
 
   return (
     <>
-      <Box sx={{ display: "flex", padding: "24px" }}>
+      <Box sx={styles.box}>
         <Grid container rowSpacing={4}>
           {renderPie()}
         </Grid>

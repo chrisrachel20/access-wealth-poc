@@ -3,6 +3,7 @@ import FormControl from "@mui/joy/FormControl";
 import Switch from "@mui/joy/Switch";
 import { useDispatch } from "react-redux";
 import { getMasterData } from "../../store/actionCreators/valuation";
+import * as styles from "./styles";
 
 export const SwitchLabel = () => {
   const dispatch = useDispatch();
@@ -33,18 +34,10 @@ export const SwitchLabel = () => {
         endDecorator={checked ? "AED" : "USD"}
         slotProps={{
           endDecorator: {
-            sx: {
-              minWidth: 24,
-              fontSize: 24,
-              fontWeight: "bold",
-            },
+            sx: styles.switchEnd,
           },
         }}
-        sx={{
-          "--Switch-thumbSize": "27px",
-          "--Switch-trackWidth": "64px",
-          "--Switch-trackHeight": "31px",
-        }}
+        sx={styles.switchStyle}
       />
     </FormControl>
   );

@@ -11,7 +11,7 @@ const Navigation = () => {
   const shouldRenderSidebar = location.pathname !== "/login";
   return (
     <>
-      {shouldRenderSidebar && <SideBar />}
+      {shouldRenderSidebar && <SideBar location={location} />}
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route

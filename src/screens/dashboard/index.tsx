@@ -5,13 +5,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { PortfolioCard } from "../../components/card";
 import { LineGraph } from "../../components/lineGraph";
 import PieCharts from "./pieCharts";
+import * as styles from "./styles";
 
 const Dashboard = () => {
+  const dispatch = useDispatch();
+
   const {
     valuationReducer: { masterData },
   } = useSelector((state: any) => state);
   const { securityValuations } = masterData;
-  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch<any>(getMasterData());
@@ -19,14 +21,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          flexDirection: "column",
-          p: 10,
-        }}
-      >
+      <Box sx={styles.dashboardBox}>
         <PortfolioCard masterData={masterData}></PortfolioCard>
         <PieCharts securityValuations={securityValuations} />
         <LineGraph masterData={masterData} />

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import LoadingButton from "@mui/lab/LoadingButton";
 import { TextField, Box, Typography } from "@mui/material";
-import { CustomizedContainer } from "./styles";
+import * as Styles from "./styles";
 import { AxiosInstance } from "../../network/axiosInstance";
 import { useNavigate } from "react-router-dom";
 import { AUTHENTICATION } from "../../network/endpoints";
@@ -15,11 +15,12 @@ import {
 import * as Strings from "../../constants/index";
 
 const LoginScreen = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const {
     appReducer: { loginError, isProcessing },
   } = useSelector((state: any) => state);
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const [credentials, setCredentials] = useState({ name: "", password: "" });
 
@@ -58,17 +59,10 @@ const LoginScreen = () => {
   };
 
   return (
-    <CustomizedContainer maxWidth="md">
+    <Styles.CustomizedContainer maxWidth="md">
       <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 5 }}>
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            flexDirection: "column",
-          }}
-        >
-          <TerrainIcon sx={{ fontSize: 70, mb: 5, color: "#001E3C" }} />
-
+        <Box sx={Styles.loginBox}>
+          <TerrainIcon sx={Styles.loginIcon} />
           <TextField
             variant="outlined"
             required
@@ -78,7 +72,7 @@ const LoginScreen = () => {
             name="name"
             margin="dense"
             onChange={handleInputChange}
-            sx={{ mt: 3, mb: 5, width: 500 }}
+            sx={Styles.inputText}
             inputProps={{ style: { fontSize: 30 } }}
             InputLabelProps={{ style: { fontSize: 25 } }}
           />
@@ -92,12 +86,12 @@ const LoginScreen = () => {
             type="password"
             margin="dense"
             onChange={handleInputChange}
-            sx={{ mb: 5, width: 500 }}
+            sx={Styles.inputText}
             inputProps={{ style: { fontSize: 30 } }}
             InputLabelProps={{ style: { fontSize: 25 } }}
           />
           {loginError && (
-            <Typography variant="h5" sx={{ mt: 1, mr: 2, color: "red" }}>
+            <Typography variant="h5" sx={Styles.errorText}>
               {loginError}
             </Typography>
           )}
@@ -107,25 +101,13 @@ const LoginScreen = () => {
             variant="contained"
             loading={isProcessing}
             disabled={handleDisabled()}
-            sx={{
-              mt: 5,
-              mb: 10,
-              height: 60,
-              width: 200,
-              fontSize: 20,
-              backgroundColor: "#001E3C",
-              borderRadius: 3,
-              "&.Mui-disabled": {
-                background: "#eaeaea",
-                color: "#808080",
-              },
-            }}
+            sx={Styles.button}
           >
             {Strings.SIGN_IN}
           </LoadingButton>
         </Box>
       </Box>
-    </CustomizedContainer>
+    </Styles.CustomizedContainer>
   );
 };
 export default LoginScreen;

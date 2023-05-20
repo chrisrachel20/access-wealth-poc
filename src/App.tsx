@@ -1,4 +1,3 @@
-import "./App.css";
 import Navigation from "../src/router/index";
 
 const App = () => {

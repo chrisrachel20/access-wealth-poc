@@ -1,8 +1,24 @@
 export const options = {
+  elements: {
+    line: {
+      borderWidth: 4,
+    },
+  },
   plugins: {
+    title: {
+      display: true,
+      text: "Market Value Chart",
+      font: {
+        size: 24,
+      },
+      padding: {
+        top: 10,
+        bottom: 30,
+      },
+    },
     legend: {
       display: true,
-      position: "bottom" as const,
+      position: "right" as const,
       labels: {
         color: "#001E3C",
         font: {
@@ -14,7 +30,7 @@ export const options = {
     },
   },
   layout: {
-    padding: 30,
+    padding: 20,
   },
   tooltips: {
     callbacks: {
@@ -23,7 +39,7 @@ export const options = {
         return {
           label,
           font: {
-            size: 26,
+            size: 24,
             weight: "bold",
           },
         };
@@ -32,4 +48,10 @@ export const options = {
   },
 };
 
-export const pieBox = { display: "flex", ml: 2, height: "550px" };
+export const lineBox = {
+  display: "flex",
+  background: "linear-gradient(to bottom, #EBF4FA , #B0CFDE)",
+  mt: "35px",
+  width: "1500px",
+  borderRadius: "0.75rem",
+};
