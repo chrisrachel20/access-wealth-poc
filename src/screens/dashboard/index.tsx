@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Box } from "@mui/material";
 import { getMasterData } from "../../store/actionCreators/valuation";
 import { useDispatch, useSelector } from "react-redux";
 import { PortfolioCard } from "../../components/card";
@@ -18,9 +19,18 @@ const Dashboard = () => {
 
   return (
     <>
-      <PortfolioCard masterData={masterData}></PortfolioCard>
-      <PieCharts securityValuations={securityValuations} />
-      <LineGraph masterData={masterData} />
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          flexDirection: "column",
+          p: 10,
+        }}
+      >
+        <PortfolioCard masterData={masterData}></PortfolioCard>
+        <PieCharts securityValuations={securityValuations} />
+        <LineGraph masterData={masterData} />
+      </Box>
     </>
   );
 };

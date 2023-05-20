@@ -10,9 +10,12 @@ export const setMasterData = (data: any) => {
   };
 };
 
-export const getMasterData = () => async (dispatch: any) => {
+export const getMasterData = (data?: any) => async (dispatch: any) => {
   try {
-    const response = await AxiosInstance.get(VALUATION);
+    const params = {
+      currencyCode: data,
+    };
+    const response = await AxiosInstance.get(VALUATION, { params });
     dispatch(setMasterData(response.data));
   } catch (err) {
     console.log("error", err);

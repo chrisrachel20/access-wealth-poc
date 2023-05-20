@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import 'chart.js/auto';
+import "chart.js/auto";
 import { Box } from "@mui/material";
 import { Pie } from "react-chartjs-2";
-import { options } from './utils';
+import { options } from "./utils";
 import * as Strings from "../../constants/index";
 
 export const PieMarketPrice = (props: any) => {
@@ -12,11 +12,15 @@ export const PieMarketPrice = (props: any) => {
   useEffect(() => {
     if (securityValuations) {
       const formattedData = {
-        labels: securityValuations?.map((item: any) => item.security.name        ),
+        labels: securityValuations?.map(
+          (item: any) =>
+            `${item.security.name} - ${item.marketPrice.toFixed(2)}`
+        ),
         datasets: [
           {
-            data: securityValuations?.map((item: any) => parseInt(item.marketPrice
-                )),
+            data: securityValuations?.map((item: any) =>
+              parseInt(item.marketPrice).toFixed(2)
+            ),
             backgroundColor: Strings.PIE_COLORS,
           },
         ],
@@ -26,8 +30,8 @@ export const PieMarketPrice = (props: any) => {
   }, [securityValuations]);
 
   return (
-    <Box sx={{ display: "flex", ml: 2}}>
-         {unitsData && <Pie data={unitsData} options={options} />}
+    <Box sx={{ display: "flex", ml: 2, height: "550px" }}>
+      {unitsData && <Pie data={unitsData} options={options} />}
     </Box>
   );
 };

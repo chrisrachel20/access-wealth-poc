@@ -1,19 +1,31 @@
-import { SET_SIDEBAR_TEXT } from "../actionCreators/app";
+import {
+  SET_PROCESSING_TRUE,
+  SET_LOGIN_ERROR,
+  SET_PROCESSING_FALSE,
+} from "../actionCreators/app";
 
 const initialState = {
-  appState: {
-    sideBar: "dashboard",
-  },
+  isProcessing: false,
 };
 export const appReducer = (
   state = initialState,
   action: { type: any; payload: any }
 ) => {
   switch (action.type) {
-    case SET_SIDEBAR_TEXT:
+    case SET_PROCESSING_TRUE:
+      return {
+        ...initialState,
+        isProcessing: true,
+      };
+    case SET_PROCESSING_FALSE:
+      return {
+        ...initialState,
+        isProcessing: false,
+      };
+    case SET_LOGIN_ERROR:
       return {
         ...state,
-        sideBar: action.payload,
+        loginError: action.payload,
       };
     default:
       return { ...state };

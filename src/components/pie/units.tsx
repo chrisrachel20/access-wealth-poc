@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "chart.js/auto";
 import { Box } from "@mui/material";
 import { Pie } from "react-chartjs-2";
-import { options } from './utils';
+import { options } from "./utils";
 import * as Strings from "../../constants/index";
 
 export const PieNetQty = (props: any) => {
@@ -12,7 +12,9 @@ export const PieNetQty = (props: any) => {
   useEffect(() => {
     if (securityValuations) {
       const formattedData = {
-        labels: securityValuations?.map((item: any) => item.security.name),
+        labels: securityValuations?.map(
+          (item: any) => `${item.security.name} - ${item.units}`
+        ),
         datasets: [
           {
             data: securityValuations?.map((item: any) => parseInt(item.units)),
@@ -25,7 +27,7 @@ export const PieNetQty = (props: any) => {
   }, [securityValuations]);
 
   return (
-    <Box sx={{ display: "flex", ml: 2 }}>
+    <Box sx={{ display: "flex", ml: 2, height: "550px" }}>
       {unitsData && <Pie data={unitsData} options={options} />}
     </Box>
   );

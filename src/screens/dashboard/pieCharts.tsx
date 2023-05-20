@@ -10,14 +10,16 @@ const PieCharts = (props: any) => {
   const { securityValuations } = props;
 
   const gridStyle = {
-    backgroundColor: "#EBF4FA",
-    height: "600px",
+    // backgroundColor: "#EBF4FA",
+    background: "linear-gradient(to bottom, #EBF4FA , #B0CFDE)",
+    height: "700px",
     width: "600px",
-    mr: 2,
+    mr: 5,
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-evenly",
     borderRadius: "30px",
+    mb: 10,
   };
 
   const title = [
@@ -38,8 +40,8 @@ const PieCharts = (props: any) => {
   const renderPie = () =>
     title.map((value) => (
       <Grid sx={gridStyle} key={value.text}>
-        <Container sx={{ textAlign: "center", p: 3, mb: -20 }}>
-          <Typography variant="h5" sx={{ fontWeight: "700", color: "#2B547E" }}>
+        <Container sx={{ textAlign: "center", p: 3 }}>
+          <Typography variant="h4" sx={{ fontWeight: "700", color: "#2B547E" }}>
             {value.text}
           </Typography>
         </Container>
@@ -49,7 +51,7 @@ const PieCharts = (props: any) => {
 
   return (
     <>
-      <Box sx={{ display: "flex", padding: "24px", ml: 50 }}>
+      <Box sx={{ display: "flex", padding: "24px" }}>
         <Grid container rowSpacing={4}>
           {renderPie()}
         </Grid>

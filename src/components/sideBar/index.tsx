@@ -12,9 +12,9 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
-import DashboardIcon from "@mui/icons-material/Dashboard";
-import LineAxisIcon from "@mui/icons-material/LineAxis";
 import * as Strings from "../../constants/index";
+import TerrainIcon from "@mui/icons-material/Terrain";
+import { SwitchLabel } from "../switch/index";
 
 const drawerWidth = 400;
 
@@ -36,23 +36,39 @@ export const SideBar = (props: any) => {
         anchor="left"
         PaperProps={{
           sx: {
-            backgroundColor: "#EBF4FA",
+            background: "linear-gradient(to bottom, #EBF4FA , #B0CFDE)",
+            borderRadius: "0.75rem",
+            margin: 5,
           },
         }}
       >
-        <Box sx={{ display: "flex", padding: "45px 50px 8px" }}>
-          <Toolbar />
-          <Typography variant="h5" sx={{ mt: 1, fontWeight: "700", color: '#2B547E' }}>
-            {Strings.ACCESS_WEALTH}
-          </Typography>
+        <Box sx={{ display: "flex", padding: "45px 30px 20px" }}>
+          <TerrainIcon sx={{ fontSize: 70, color: "#001E3C" }} />
+          <Box sx={{ display: "flex", alignItems: "center", ml: 2 }}>
+            <Typography
+              sx={{ mt: 1, fontWeight: "900", color: "#2B547E", fontSize: 26 }}
+            >
+              {Strings.ACCESS_WEALTH}
+            </Typography>
+          </Box>
           <Toolbar />
         </Box>
         <Divider
           sx={{ borderColor: "#282c34", height: "2px", margin: "0 20px" }}
         />
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            padding: "30px 30px 10px",
+          }}
+        >
+          <SwitchLabel />
+        </Box>
+
         <List
           sx={{
-            padding: "45px 50px 8px",
+            padding: "45px 30px 8px",
             "&& .Mui-selected": {
               color: "#EBF4FA",
               bgcolor: "#282c34",
@@ -81,9 +97,7 @@ export const SideBar = (props: any) => {
                 component={Link}
                 to={item.route}
               >
-                <ListItemIcon>
-                  {index % 2 === 0 ? <DashboardIcon /> : <LineAxisIcon />}
-                </ListItemIcon>
+                <ListItemIcon>{item.icon}</ListItemIcon>
                 <ListItemText
                   primaryTypographyProps={{ fontSize: 24 }}
                   primary={item.title}

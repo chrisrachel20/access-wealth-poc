@@ -5,6 +5,7 @@ export const PortfolioCard = (props: any) => {
   const { masterData } = props;
   const { portfolio, currencyCode, marketValue, securityValuations } =
     masterData;
+
   const { investor } = portfolio || "";
 
   const profileDetails = [
@@ -22,7 +23,7 @@ export const PortfolioCard = (props: any) => {
     },
     {
       key: Strings.INVESTOR_PORTFOLIO_VALUE,
-      value: marketValue,
+      value: marketValue?.toFixed(2),
     },
   ];
 
@@ -46,36 +47,33 @@ export const PortfolioCard = (props: any) => {
 
   const renderStockDetails = () =>
     securityValuations?.map((item: any) => (
-      <Container sx={{ display: "flex", mb: 2 }} key={item.key}>
+      <Box sx={{ display: "flex", mb: 2 }} key={item.security.name}>
         <Typography variant="h5" sx={{ mt: 1, mr: 2 }}>
           {item.security.name}
         </Typography>
-
         <img
           src={item.security.logoUrl}
           alt={item.security.name}
           width={50}
           height={50}
         />
-      </Container>
+      </Box>
     ));
 
   return (
     <Box
       sx={{
         display: "flex",
-        ml: 53,
         padding: "24px",
-        mt: 20,
-        mr: 20,
         borderRadius: "0.75rem",
-        backgroundColor: "#EBF4FA",
+        // backgroundColor: "#EBF4FA",
+        background: "linear-gradient(to bottom, #EBF4FA , #B0CFDE)",
         mb: 20,
-        width: "1500px",
+        width: "auto",
       }}
     >
       <Container
-        sx={{ display: "flex", ml: 2, flexDirection: "column", mb: 5 }}
+        sx={{ display: "flex", flexDirection: "column", mb: 5 }}
       >
         <Typography
           variant="h4"
@@ -83,7 +81,7 @@ export const PortfolioCard = (props: any) => {
         >
           {Strings.PORTFOLIO_VALUE}
         </Typography>
-        <Container sx={{ display: "flex", ml: 2, flexDirection: "row", mb: 5 }}>
+        <Container sx={{ display: "flex", flexDirection: "row" }}>
           <Card
             sx={{
               width: 500,

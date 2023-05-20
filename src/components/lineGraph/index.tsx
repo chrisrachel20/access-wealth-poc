@@ -10,7 +10,23 @@ export const LineGraph = (props: any) => {
   const [chartData, setChartData] = useState<any>([]);
 
   const options = {
+    elements: {
+      line: {
+        borderWidth: 4,
+      },
+    },
     plugins: {
+      title: {
+        display: true,
+        text: "Market Value Chart",
+        font: {
+          size: 24,
+        },
+        padding: {
+          top: 10,
+          bottom: 30,
+        },
+      },
       legend: {
         display: true,
         position: "right" as const,
@@ -18,6 +34,7 @@ export const LineGraph = (props: any) => {
           color: "#001E3C",
           font: {
             size: 20,
+            weight: "bold",
           },
           padding: 20,
         },
@@ -73,7 +90,7 @@ export const LineGraph = (props: any) => {
             fill: false,
             borderColor: color[index % 5],
             backgroundColor: color[index % 5],
-            tension: 0.1,
+            tension: 0.2,
           };
         }),
       };
@@ -86,8 +103,8 @@ export const LineGraph = (props: any) => {
     <Box
       sx={{
         display: "flex",
-        ml: 53,
-        backgroundColor: "white",
+        // backgroundColor: "white",
+        background: "linear-gradient(to bottom, #EBF4FA , #B0CFDE)",
         mt: "35px",
         width: "1500px",
         borderRadius: "0.75rem",

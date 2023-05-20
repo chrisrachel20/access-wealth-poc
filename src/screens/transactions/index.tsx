@@ -50,13 +50,11 @@ const Transactions = () => {
     <Box
       sx={{
         display: "flex",
-        ml: 53,
         padding: "24px",
-        mt: 20,
-        mr: 20,
         borderRadius: "0.75rem",
         backgroundColor: "#EBF4FA",
         mb: 20,
+        m: 10,
       }}
     >
       <DataGrid
@@ -78,11 +76,15 @@ const Transactions = () => {
         hideFooterPagination={true}
         hideFooterSelectedRowCount={true}
         sx={{
+          height: "80%",
           m: 2,
           p: 2,
           boxShadow: 3,
           border: 2,
           borderColor: "#282c34",
+          "& .MuiDataGrid-toolbarContainer": {
+            mb: 5,
+          },
           "& .MuiDataGrid-columnHeader": {
             fontSize: 22,
           },
