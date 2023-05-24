@@ -9,7 +9,7 @@ export const options = {
       display: true,
       text: "Market Value Chart",
       font: {
-        size: 24,
+        size: 30,
       },
       padding: {
         top: 10,
@@ -20,7 +20,7 @@ export const options = {
       display: true,
       position: "right" as const,
       labels: {
-        color: "#001E3C",
+        color: "#808080",
         font: {
           size: 20,
           weight: "bold",
@@ -50,7 +50,7 @@ export const options = {
 
 export const lineBox = {
   display: "flex",
-  background: "linear-gradient(to bottom, #EBF4FA , #B0CFDE)",
+  background: '#1B2430',
   mt: "35px",
   width: "1500px",
   borderRadius: "0.75rem",

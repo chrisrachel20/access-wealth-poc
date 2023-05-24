@@ -17,7 +17,7 @@ import { SwitchLabel } from "../switch/index";
 import * as styles from "./styles";
 
 export const SideBar = (props: any) => {
-  const location = props;
+  const { location } = props;
 
   return (
     <Box sx={styles.flex}>
@@ -40,7 +40,7 @@ export const SideBar = (props: any) => {
         </Box>
 
         <List sx={styles.list}>
-          {Strings.SIDEBAR.map((item, index) => (
+          {Strings.SIDEBAR.map((item, _index) => (
             <ListItem key={item.title} disablePadding sx={{ mb: 5 }}>
               <ListItemButton
                 selected={(location.pathname as any) === item.route}

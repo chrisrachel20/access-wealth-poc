@@ -4,7 +4,7 @@ export const options = {
       display: true,
       position: "bottom" as const,
       labels: {
-        color: "#001E3C",
+        color: "#808080",
         font: {
           size: 20,
           weight: "bold",

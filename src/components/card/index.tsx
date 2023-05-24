@@ -1,76 +1,90 @@
-import { Box, Typography, Container, Card } from "@mui/material";
+import { Box, Typography, Container, Card, Divider } from "@mui/material";
 import * as Strings from "../../constants/index";
 import * as styles from "./styles";
+import { ControlledAccordions } from "../accordion/index";
+import PaidIcon from "@mui/icons-material/Paid";
+import AccountBoxIcon from "@mui/icons-material/AccountBox";
 
 export const PortfolioCard = (props: any) => {
   const { masterData } = props;
   const { portfolio, currencyCode, marketValue, securityValuations } =
     masterData;
 
-  const { investor } = portfolio || "";
-
   const profileDetails = [
     {
       key: Strings.INVESTOR_NAME,
       value: portfolio?.name,
+      icon: (
+        <AccountBoxIcon
+          sx={{
+            color: "#808080",
+            display: "flex",
+            alignSelf: "center",
+            fontSize: 35,
+          }}
+        />
+      ),
     },
-    {
-      key: Strings.INVESTOR_ACCOUNT_CURRENCY,
-      value: investor?.currencyCode,
-    },
-    {
-      key: Strings.VALUATION_CURRENCY,
-      value: currencyCode,
-    },
+
     {
       key: Strings.INVESTOR_PORTFOLIO_VALUE,
+      currencyCode: currencyCode,
       value: marketValue?.toFixed(2),
+      icon: (
+        <PaidIcon
+          sx={{
+            color: "#808080",
+            display: "flex",
+            alignSelf: "center",
+            fontSize: 35,
+          }}
+        />
+      ),
     },
   ];
 
   const renderDetails = () =>
     profileDetails.map((item: any) => (
-      <Container sx={styles.profileWrapper} key={item.key}>
-        <Typography variant="h5" sx={styles.profileKey}>
-          {item.key}
-        </Typography>
-        <Typography variant="h5" sx={styles.profileValue}>
-          {item.value}
-        </Typography>
-      </Container>
-    ));
-
-  const renderStockDetails = () =>
-    securityValuations?.map((item: any) => (
-      <Box sx={{ display: "flex", mb: 2 }} key={item.security.name}>
-        <Typography variant="h5" sx={{ mt: 1, mr: 2 }}>
-          {item.security.name}
-        </Typography>
-        <img
-          src={item.security.logoUrl}
-          alt={item.security.name}
-          width={50}
-          height={50}
-        />
-      </Box>
+      <Card sx={{ ...styles.card, mr: 5, height: 40 }} key={item.key}>
+        <Container sx={styles.profileWrapper} key={item.key}>
+          <Box sx={{ display: "flex" }}>
+            {item.icon}
+            <Typography variant="h5" sx={styles.profileKey}>
+              {item.key}
+            </Typography>
+          </Box>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            {item.currencyCode && (
+              <Typography variant="h5" sx={styles.profileCurrency}>
+                {item.currencyCode}
+              </Typography>
+            )}
+            <Typography variant="h4" sx={styles.profileValue}>
+              {item.value}
+            </Typography>
+          </Box>
+        </Container>
+      </Card>
     ));
 
   return (
-    <Box sx={styles.cardBox}>
-      <Container sx={styles.containerWrapper}>
-        <Typography variant="h4" sx={styles.title}>
-          {Strings.PORTFOLIO_VALUE}
-        </Typography>
-        <Container sx={styles.detailsContainer}>
-          <Card sx={{...styles.card, mr: 10}}>{renderDetails()}</Card>
-          <Card sx={styles.card}>
-            <Typography variant="h5" sx={styles.stocksTitle}>
-              {Strings.CURRENT_STOCKS}
-            </Typography>
-            {renderStockDetails()}
-          </Card>
-        </Container>
-      </Container>
-    </Box>
+    <>
+      <Box sx={styles.cardBox}>
+        <Box sx={styles.containerWrapper}>
+          <Typography sx={styles.title}>{Strings.PORTFOLIO_VALUE}</Typography>
+          <Box sx={{ display: "flex" }}>
+            <Box sx={styles.detailsContainer}>{renderDetails()}</Box>
+          </Box>
+        </Box>
+        <Divider orientation="vertical" flexItem sx={styles.verticalDivider} />
+        <Card sx={styles.stockCard}>
+          <Typography sx={styles.stocksTitle}>
+            {Strings.CURRENT_STOCKS}
+          </Typography>
+          <ControlledAccordions securityValuations={securityValuations} />
+        </Card>
+      </Box>
+      <Divider variant="fullWidth" sx={styles.divider} />
+    </>
   );
 };

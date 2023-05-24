@@ -29,7 +29,7 @@ const PieCharts = (props: any) => {
     title.map((value) => (
       <Grid sx={styles.gridStyle} key={value.text}>
         <Container sx={styles.container}>
-          <Typography variant="h4" sx={styles.text}>
+          <Typography sx={styles.text}>
             {value.text}
           </Typography>
         </Container>
