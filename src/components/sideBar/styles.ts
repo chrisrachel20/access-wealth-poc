@@ -13,26 +13,26 @@ export const drawer = {
 
 export const drawerPaper = {
   sx: {
-    backgroundColor: "#1B2430",
-    borderRight: "1px solid #808080",
+    backgroundColor: "#0d1117",
+    // borderRight: "1px solid #7F7F7F",
   },
 };
 
 export const logoTitle = { ...flex, padding: "45px 30px 20px" };
 
-export const logo = { fontSize: 70, color: "#808080" };
+export const logo = { fontSize: 70, color: "#7F7F7F" };
 
 export const titleBox = { ...flex, alignItems: "center", ml: "5px" };
 
 export const title = {
   mt: 1,
   fontWeight: "900",
-  color: "#808080",
-  fontSize: 26,
+  color: "#7F7F7F",
+  fontSize: 30,
 };
 
 export const divider = {
-  borderColor: "#808080",
+  borderColor: "#7F7F7F",
   height: "2px",
   margin: "0 20px",
 };
@@ -46,11 +46,11 @@ export const switchBox = {
 export const list = {
   padding: "45px 30px 8px",
   "& .MuiListItemButton-root, & .MuiListItemIcon-root": {
-    color: "#808080",
+    color: "#7F7F7F",
   },
   "&& .Mui-selected": {
     color: "white",
-    backgroundColor: "#808080",
+    backgroundColor: "#7F7F7F",
     borderRadius: "10px",
     "&, & .MuiListItemIcon-root": {
       color: "#EBF4FA",

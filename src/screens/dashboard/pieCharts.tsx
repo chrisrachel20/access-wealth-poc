@@ -40,7 +40,7 @@ const PieCharts = (props: any) => {
   return (
     <>
       <Box sx={styles.box}>
-        <Grid container rowSpacing={4}>
+        <Grid container rowSpacing={4} sx={{justifyContent: 'space-between'}}>
           {renderPie()}
         </Grid>
       </Box>

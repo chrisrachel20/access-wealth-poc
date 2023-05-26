@@ -2,7 +2,7 @@ export const tableBox = {
   display: "flex",
   padding: "24px",
   borderRadius: "0.75rem",
-  backgroundColor: "#1B2430",
+  backgroundColor: '#0d1117',
   mb: 20,
   m: 10,
 };
@@ -13,28 +13,28 @@ export const tableStyles = {
   p: 2,
   boxShadow: 3,
   border: 2,
-  borderColor: "#808080",
+  borderColor: "#7F7F7F",
   "& .MuiDataGrid-toolbarContainer": {
     mb: 5,
   },
   "& .MuiDataGrid-columnHeader": {
     fontSize: 22,
-    color: "#808080"
+    color: "#7F7F7F"
   },
   "& .MuiDataGrid-columnHeaderTitle": {
     fontWeight: 900,
-    color: "#808080"
+    color: "#7F7F7F"
   },
   "& .MuiDataGrid-cellContent": {
     fontSize: 20,
-    color: "#808080"
+    color: "#7F7F7F"
   },
   "& .MuiDataGrid-withBorderColor": {
-    borderColor: "#808080",
+    borderColor: "#7F7F7F",
     borderWidth: 2,
   },
   "& .MuiInputBase-root, & .MuiSvgIcon-root": {
     fontSize: 24,
-    color: "#808080"
+    color: "#7F7F7F"
   },
 };

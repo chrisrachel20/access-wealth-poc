@@ -17,7 +17,7 @@ export const PortfolioCard = (props: any) => {
       icon: (
         <AccountBoxIcon
           sx={{
-            color: "#808080",
+            color: "#7F7F7F",
             display: "flex",
             alignSelf: "center",
             fontSize: 35,
@@ -33,7 +33,7 @@ export const PortfolioCard = (props: any) => {
       icon: (
         <PaidIcon
           sx={{
-            color: "#808080",
+            color: "#7F7F7F",
             display: "flex",
             alignSelf: "center",
             fontSize: 35,

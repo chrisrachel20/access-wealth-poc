@@ -27,7 +27,7 @@ export const button = {
   borderRadius: 3,
   "&.Mui-disabled": {
     background: "#eaeaea",
-    color: "#808080",
+    color: "#7F7F7F",
   },
 };
 

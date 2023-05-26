@@ -1,4 +1,4 @@
-import {SyntheticEvent, useState} from "react";
+import { SyntheticEvent, useState } from "react";
 import {
   Box,
   Typography,
@@ -10,12 +10,11 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import * as Strings from "../../constants/index";
 
 export const ControlledAccordions = (props: any) => {
-    
   const { securityValuations } = props;
   const [expanded, setExpanded] = useState<string | false>(false);
 
   const handleChange =
-    (panel: string) => (_event:  SyntheticEvent, isExpanded: boolean) => {
+    (panel: string) => (_event: SyntheticEvent, isExpanded: boolean) => {
       setExpanded(isExpanded ? panel : false);
     };
 
@@ -37,9 +36,10 @@ export const ControlledAccordions = (props: any) => {
   const renderStockDetails = () =>
     securityValuations?.map((item: any) => (
       <Accordion
+        key={item.security.name}
         expanded={expanded === item.security.name}
         onChange={handleChange(item.security.name)}
-        sx={{ backgroundColor: "#E5E4E2", mb: 2, borderRadius: 1 }}
+        sx={{ backgroundColor: "#0d1117", mb: 2, borderRadius: 1 }}
       >
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <img
@@ -54,7 +54,7 @@ export const ControlledAccordions = (props: any) => {
               display: "flex",
               ml: 5,
               alignItems: "center",
-              color: "#808080",
+              color: "#7F7F7F",
             }}
             variant="h5"
           >

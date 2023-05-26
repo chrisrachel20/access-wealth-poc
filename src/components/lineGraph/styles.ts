@@ -20,7 +20,7 @@ export const options = {
       display: true,
       position: "right" as const,
       labels: {
-        color: "#808080",
+        color: "#7F7F7F",
         font: {
           size: 20,
           weight: "bold",
@@ -50,7 +50,7 @@ export const options = {
 
 export const lineBox = {
   display: "flex",
-  background: '#1B2430',
+  backgroundColor: '#0d1117', 
   mt: "35px",
   width: "1500px",
   borderRadius: "0.75rem",

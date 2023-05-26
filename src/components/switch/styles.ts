@@ -2,7 +2,7 @@ export const switchEnd = {
     minWidth: 24,
     fontSize: 24,
     fontWeight: "bold",
-    color: '#808080',
+    color: '#7F7F7F',
   }
 
   export const switchStyle = {

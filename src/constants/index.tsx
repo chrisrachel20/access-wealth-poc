@@ -12,7 +12,7 @@ export const INVESTOR_NAME = "Investor Name";
 export const INVESTOR_ACCOUNT_CURRENCY = "Investor Account Currency:";
 export const VALUATION_CURRENCY = "Valuation Currency:";
 export const INVESTOR_PORTFOLIO_VALUE = "Portfolio Value";
-export const ACCESS_WEALTH = "Access Wealth";
+export const ACCESS_WEALTH = "Access";
 export const SIDEBAR = [
   {
     title: "Dashboard",

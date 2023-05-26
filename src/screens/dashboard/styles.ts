@@ -1,5 +1,5 @@
 export const gridStyle = {
-  height: "500px",
+  height: "575px",
   width: "500px",
   mr: 5,
   mt: 5,
@@ -12,9 +12,9 @@ export const gridStyle = {
 
 export const container = { textAlign: "center", p: 3 };
 
-export const text = { fontWeight: "700", color: "#808080", fontSize: 30 };
+export const text = { fontWeight: "700", color: "#7F7F7F", fontSize: 30 };
 
-export const box = { display: "flex" };
+export const box = { display: "flex", backgroundColor: '#0d1117', width: '100%',};
 
 export const dashboardBox = {
   display: "flex",
@@ -22,11 +22,12 @@ export const dashboardBox = {
   flexDirection: "column",
   p: 10,
   borderRadius: "50px 0 0 50px",
-  borderColor: "#808080",
+  borderColor: "#7F7F7F",
+  width: '100%',
 };
 
 export const divider = {
-  borderColor: "#808080",
+  borderColor: "#0d1117",
   height: "2px",
   width: "100%",
   mb: 5,
@@ -40,13 +41,13 @@ export const drawer = {
     width: 500,
     boxSizing: "border-box",
     borderRadius: "50px 0 0 50px",
-    borderColor: "1px solid #808080",
+    borderColor: "1px solid #7F7F7F",
   },
 };
 
 export const drawerPaper = {
   sx: {
-    backgroundColor: "#1B2430",
-    borderLeft: "1px solid #808080",
+    backgroundColor: "#161D27",
+    borderLeft: "1px solid #7F7F7F",
   },
 };
